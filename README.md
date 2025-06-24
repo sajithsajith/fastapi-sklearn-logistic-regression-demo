@@ -9,7 +9,7 @@ An end-to-end machine learning web application that analyzes medical insurance c
 ## Table of Contents
 
 - [Key Features](#key-features)
-- [Live Demo & Screenshots](#live-demo--screenshots)
+- [Screenshots](#screenshots)
 - [Technology Stack](#technology-stack)
 - [Project Structure](#project-structure)
 - [Setup and Installation](#setup-and-installation)
@@ -22,7 +22,7 @@ An end-to-end machine learning web application that analyzes medical insurance c
 
 ---
 
-## Key Features ✨
+## Key Features
 
 - **CSV Data Ingestion:** Upload claim data directly through a user-friendly web interface.
 - **Automated Data Preprocessing:** The backend automatically cleans currency fields (e.g., `'Payment Amount'`, `'Balance'`) and handles missing values.
@@ -48,7 +48,7 @@ After processing, the application displays the model's accuracy and the generate
 
 ![Homepage](assets/result.png?raw=true)
 
-## Technology Stack 🛠️
+## Technology Stack
 
 - **Backend:**
   - **FastAPI:** For building the high-performance, asynchronous web API.
