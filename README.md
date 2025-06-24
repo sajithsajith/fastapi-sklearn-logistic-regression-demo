@@ -4,7 +4,7 @@
 ![Framework](https://img.shields.io/badge/Framework-FastAPI-green.svg)
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-An end-to-end machine learning web application that analyzes medical insurance claim data. This project demonstrates the integration of a data science workflow into a robust web API using FastAPI. Users can upload a CSV file of claim data, and the application will automatically clean the data, train a Logistic Regression model to predict claim denial reasons, and return performance metrics and dynamic data visualizations.
+An end-to-end machine learning web application that analyzes medical insurance claim data. This project demonstrates the integration of a data science workflow into a robust web API using FastAPI. Users can upload a CSV/XLSX file of claim data, and the application will automatically clean the data, train a Logistic Regression model to predict claim denial reasons, and return performance metrics and dynamic data visualizations.
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ An end-to-end machine learning web application that analyzes medical insurance c
 
 ### **1. Upload Page**
 
-The user is greeted with a simple interface to upload their CSV file.
+The user is greeted with a simple interface to upload their CSV/XLSX file.
 
 ![Homepage](assets/homepage.png?raw=true)
 
@@ -138,7 +138,7 @@ The application will be available at **http://127.0.0.1:8000**.
 ## How to Use
 
 1.  Open your web browser and navigate to `http://127.0.0.1:8000`.
-2.  Click the **"Choose File"** button and select a CSV file containing medical claim data. A sample file can be used from the notebook you provided.
+2.  Click the **"Choose File"** button and select a CSV/XLSX file containing medical claim data. A sample file can be used from the notebook you provided.
 3.  Click the **"Upload and Analyze"** button.
 4.  The application will process the file and display a results page with:
     - The model's accuracy percentage.
@@ -149,7 +149,7 @@ The application will be available at **http://127.0.0.1:8000**.
 
 The application follows a standard machine learning pipeline triggered by a file upload:
 
-1.  **File Ingestion:** The `/upload` endpoint in `main.py` receives the uploaded CSV file.
+1.  **File Ingestion:** The `/upload` endpoint in `main.py` receives the uploaded CSV/XLSX file.
 2.  **Data Loading & Cleaning (`ML/preprocessing.py`):**
     - The raw file stream is read into a Pandas DataFrame.
     - Any rows with missing data after cleaning are dropped.
