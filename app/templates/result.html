@@ -1,0 +1,33 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Results</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; text-align: center; }
+        h1, h2, h3 { color: #333; }
+        img { max-width: 80%; border: 1px solid #ddd; margin-top: 20px; }
+        .accuracy { font-size: 1.5em; color: #28a745; }
+        .container { max-width: 1200px; margin: auto; }
+        .plot-section { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Complete</h1>
+        <h2>Model Accuracy: <span class="accuracy">{{ "%.2f"|format(accuracy) }}%</span></h2>
+        
+        <div class="plot-section">
+            <h3>Data Visualization</h3>
+            <img src="{{ viz_uri }}" alt="Data Visualization Plot">
+        </div>
+        
+        <div class="plot-section">
+            <h3>Decision Boundary Plot</h3>
+            <img src="{{ boundary_uri }}" alt="Decision Boundary Plot">
+        </div>
+
+        <a href="/">Run another analysis</a>
+    </div>
+</body>
+</html>
