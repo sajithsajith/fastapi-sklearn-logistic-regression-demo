@@ -1,14 +1,19 @@
-import numpy as np
+import io
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 from sklearn.preprocessing import OrdinalEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 
-def load_and_clean_data(file_path):
-    df = pd.read_csv(file_path)
+def load_and_clean_data(file_stream, filename):
+    contents = file_stream.read()
+    file_like_object = io.BytesIO(contents)
+    if filename.endswith(".csv"):
+        df = pd.read_csv(file_like_object)
+    elif filename.endswith((".xls", ".xlsx")):
+        df = pd.read_excel(file_like_object)
+    else:
+        raise ValueError("Unsupported file format. Please upload a CSV or Excel file.")
     df = df.dropna(how="any")
     return df
 

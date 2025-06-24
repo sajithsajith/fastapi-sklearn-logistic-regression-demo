@@ -17,13 +17,15 @@ async def read_root(request: Request):
 
 @app.post("/upload", response_class=HTMLResponse)
 async def create_upload_file(request: Request, file: UploadFile = File(...)):
-    if not file.filename.endswith(".csv"):
+    filename = file.filename
+    if not (filename.endswith(".csv") or filename.endswith(".xlsx")):
         raise HTTPException(
-            status_code=400, detail="Invalid file type. Please upload a CSV file."
+            status_code=400,
+            detail="Invalid file type. Please upload a CSV or XLSX file.",
         )
 
     try:
-        df = load_and_clean_data(file.file)
+        df = load_and_clean_data(file.file, filename)
 
         viz_vars = [
             "CPT Code",
